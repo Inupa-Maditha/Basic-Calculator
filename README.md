@@ -1,2 +1,3 @@
-# Basic-Calculator
-Basic calculator built with HTML, CSS, and JavaScript.
+## Basic Calculator
+
+A basic calculator built using HTML, CSS, and JavaScript.
