@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="calculator.js" defer></script>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="assests/icon.png">
+
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <div id="mainContainer" class="flex column">
+        <h1>CALCULATOR</h1>
+        <div id="wigetContainer" class="flex column border">
+            <div id="parentDisplay" class="flex column border">
+                <div id="upperDisplay" class="childDisplay flex row">
+                    <p id="question"></p>
+                </div>
+                <div id="lowerDisplay" class="childDisplay flex row">
+                    <p id="answerLabel" class="answer">Answer :</p>
+                    <p id="answer" class="answer"></p>
+                </div>
+            </div>
+            <div id="inputFieldContainer" class="flex row">
+                <label id="labelField" for="numberField">Input here :</label>
+                <input type="number" id="numberField" class="border2">
+                <button id="forInputNumber" onclick="getUserInputNumber()">Submit</button>
+            </div>
+            <div id="operatorsContainer" class="flex row">
+                <button id="addBtn" onclick="operator(this)" class="operatorBtn flex column">+</button>
+                <button id="substractBtn" onclick="operator(this)" class="operatorBtn flex column">−</button>
+                <button id="multiplicationBtn" onclick="operator(this)" class="operatorBtn flex column">×</button>
+                <button id="divideBtn" onclick="operator(this)" class="operatorBtn flex column">÷</button>
+            </div>
+            <div id="eq-clr-del-container" class="flex row">
+                <div id="del-clr-Container" class="flex column">
+                    <button id="delete" onclick="deleteLastInput()" class="dle-clr-btn">Delete</button>
+                    <button id="clear" onclick="clearInputs()" class="dle-clr-btn">Clear</button>
+                </div>
+                <div id="equalContainer" class="flex column">
+                    <button id="equal" onclick="equal()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
