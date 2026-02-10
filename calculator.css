@@ -1,0 +1,196 @@
+:root {
+    --circle: 50%;
+    --radius-S: 3px;
+    --radius-M: 5px;
+    --radius-L: 8px;
+    --paddin-S: 20px;
+    --paddin-L: 40px;
+    --width-S: 45%;
+    --width-M: 60%;
+    --width-L: 80%;
+    --width-Max: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+#mainContainer {
+    align-items: center;
+}
+
+#wigetContainer {
+    width: 510px;
+    padding: var(--paddin-L);
+    border-radius: var(--radius-L);
+    background-color: rgba(0, 0, 0, 0.03);
+    box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-style: italic;
+    font-family: 'Segoe UI';
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#parentDisplay {
+    margin-bottom: 50px;
+    width: var(--width-Max);
+    padding: var(--paddin-S);
+    background-color: rgba(0, 0, 0, 0.01);
+    border-radius: var(--radius-S);
+    box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+#upperDisplay {
+    justify-content: left;
+    height: 57px;
+}
+
+#lowerDisplay {
+    justify-content: space-between;
+    height: 88px;
+}
+
+#question {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.answer {
+    font-size: 28px;
+}
+
+#answerLabel {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#inputFieldContainer {
+    padding: var(--paddin-S);
+    justify-content: space-between;
+}
+
+#labelField {
+    height: 55px;
+    width: 30%;
+    font-size: 24px;
+    align-content: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#numberField {
+    width: 40%;
+    font-size: 24px;
+    text-align: center;
+}
+
+#forInputNumber {
+    width: 20%;
+    margin: 0;
+    padding: 0;
+}
+
+#operatorsContainer {
+    padding: var(--paddin-S);
+    justify-content: space-between;
+}
+
+.operatorBtn {
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    border: 3px solid;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 64, 182);
+    border-radius: var(--circle);
+    transition: border-color 250ms;
+    border-color: rgb(114, 154, 229);
+    background-color: rgb(114, 154, 229);
+}
+
+.operatorBtn:hover {
+    border-color: rgb(0, 89, 255);
+}
+
+#eq-clr-del-container {
+    padding: var(--paddin-S);
+    justify-content: space-between;
+}
+
+#eq-clr-del-container>div:nth-child(1) {
+    width: 56%;
+    height: 170px;
+    justify-content: space-between;
+}
+
+#eq-clr-del-container>div:nth-child(2) {
+    width: 40%;
+    height: 170px;
+}
+
+#delete,
+#clear,
+#equal {
+    padding: 0;
+    border-radius: var(--radius-M);
+}
+
+#delete {
+    height: 46%;
+    font-size: 24px;
+    border: 3px solid;
+    color: rgb(181, 128, 29);
+    transition: border-color 250ms;
+    border-color: rgb(255, 207, 118);
+    background-color: rgb(255, 207, 118);
+}
+
+#delete:hover {
+    border-color: rgb(255, 166, 0);
+}
+
+#clear {
+    height: 46%;
+    font-size: 24px;
+    border: 3px solid;
+    color: rgb(200, 25, 25);
+    transition: border-color 250ms;
+    border-color: rgb(253, 149, 149);
+    background-color: rgb(253, 149, 149);
+}
+
+#clear:hover {
+    border-color: rgb(255, 79, 79);
+}
+
+#equal {
+    height: 100%;
+    font-size: 64px;
+    border: 3px solid;
+    color: rgb(61, 166, 65);
+    transition: border-color 250ms;
+    border-color: rgb(135, 255, 116);
+    background-color: rgb(135, 255, 116);
+}
+
+#equal:hover {
+    border-color: rgb(31, 231, 0);
+}
+
+button {
+    cursor: pointer;
+}
