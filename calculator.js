@@ -1,5 +1,7 @@
 let arrayIndex = 0;
 let operationArray = [];
+let total = 0;
+let subtotal = '';
 let isClickedOperator = false;
 let isSubmitNumber = false;
 let answer = document.getElementById("answer");
@@ -86,8 +88,62 @@ function clearInputs() {
     operationArray.length = 0;
     isClickedOperator = false;
     isSubmitNumber = true;
+    answer.innerText = '';
 
     displayOperation();
+}
+
+function equal() {
+
+    total = 0;
+    subtotal = '';
+
+    if (operationArray.length % 2 != 0) {
+        operationArray.length--;
+        displayOperation();
+    }
+
+    for (let i = 0; i < operationArray.length; i += 2) {
+
+        if (operationArray[i] == sum) {
+
+            if (operationArray[i + 2] == sum || operationArray[i + 2] == sub) {
+                total += Number(operationArray[i + 1]);
+
+            } else if (operationArray[i + 2] == mul || operationArray[i + 2] == div) {
+                subtotal = Number(operationArray[i + 1]);
+
+                for (let j = i + 2; operationArray[j] == mul || operationArray[j] == div; j += 2) {
+                    if (operationArray[j] == mul) {
+                        subtotal *= Number(operationArray[j + 1]);
+                    } else if (operationArray[j] == div) {
+                        subtotal /= Number(operationArray[j + 1]);
+                    }
+                }
+                total += subtotal;
+            }
+
+        } else if (operationArray[i] == sub) {
+
+            if (operationArray[i + 2] == sum || operationArray[i + 2] == sub) {
+                total -= Number(operationArray[i + 1]);
+
+            } else if (operationArray[i + 2] == mul || operationArray[i + 2] == div) {
+                subtotal = Number(operationArray[i + 1]);
+
+                for (let j = i + 2; operationArray[j] == mul || operationArray[j] == div; j += 2) {
+                    if (operationArray[j] == mul) {
+                        subtotal *= Number(operationArray[j + 1]);
+                    } else if (operationArray[j] == div) {
+                        subtotal /= Number(operationArray[j + 1]);
+                    }
+                }
+                total -= subtotal;
+            }
+        }
+
+    }
+    displayAnswer();
 }
 
 function displayOperation() {
@@ -96,4 +152,9 @@ function displayOperation() {
     for (let i = 0; i < operationArray.length; i++) {
         question.innerText += operationArray[i];
     }
+}
+
+function displayAnswer() {
+    answer.innerText = total;
+    console.log('Answer : ' + total);
 }
